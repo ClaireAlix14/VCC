@@ -15,3 +15,11 @@ Etape 3 :
 
 1. Un dockerfile est beaucoup plus rapide et permet la portabilité. D'autant plus que cela va permettre d'avoir la même configuration pour tous les conteneurs utilisant une même image.
 2. L'image contient l'application, et le conteneur est une instance cette l'image (c'est l'environnement de l'app en gros).
+
+
+
+Etape 4 :
+
+1. Docker compose permet de lancer plusieurs conteneurs en même temps. Cela est très utiles lorsqu'on doit déployer plusieurs applications en même temps (ça évite de run plusieurs fois).
+2.Le fichier docker-compose.yml précise la configuration des conteneurs (services, les ports…)
+3. Si on veut déployer des insatnces qui doiveent communiquer, il va falloir configurer des réseaux virtuels de manière exponentielle.
