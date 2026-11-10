@@ -1,5 +1,7 @@
 ## Etape 1
 
+<img width="820" height="711" alt="architecture drawio" src="https://github.com/user-attachments/assets/84329397-11ba-4c59-b438-20d66b31cf03" />
+
 ## Etape 2
 
 1. **Quels sont les différents rôles de la VM connectée à Internet dans votre architecture ?**
