@@ -11,6 +11,12 @@
 
 ## Etape 3
 
-1. **Pourquoi Jenkins doit-il disposer d’un accès à l’API Kubernetes ?**
+1. **Pourquoi Jenkins doit-il disposer d’un accès à l’API Kubernetes ?** Jenkins doit disposer d'un accès à l'API Kubernetes pour pouvoir exécuter l'étape finale du pipeline, c'est-à-dire la commande kubectl apply.
 2. **Quelles étapes du job Jenkins correspondent à la CI, et lesquelles correspondent à la CD ?** CI: Checkout (récupérer le code depuis Git) et Build (construction des images Docker). CD: Push (publication des images dans le Registry) et Deploy (déploiement sur Kubernetes).
 3. **Quel est le parcours d’une modification du code source depuis le "git push" jusqu’à l’application Calculator ? Pour chaque étape, indiquez l’outil ou la technologie qui intervient.**
+- Développeur envoie son code (push) vers GitHub
+- Jenkins détecte la mise à jour grâce au polling et télécharge le code
+- Jenkins/Docker build les images Docker
+- Jenkins/Docker Registry publie les images dans le registry privé
+- Jenkins/Kubernetes ordonne la mise à jour/déploiement de la nouvelle application (kubectl apply)
+- Kubernetes les workers récupèrent les nouvelles images dans le registry et redémarrent les pods pour déployer la nouvelle application en production
